@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void q1checkAnswer(View view) {
-        q1radioButton = (RadioButton) findViewById(R.id.q1radioButton2);
         q1radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void q3checkAnswer(View view) {
-        q3radioButton = (RadioButton) findViewById(R.id.q3radioButton2);
         q3radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,19 +67,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void q4CheckAnswer(View view) {
-        answer1 = (CheckBox) findViewById(R.id.q4checkBox1);
-        answer2 = (CheckBox) findViewById(R.id.q4checkBox2);
-        answer3 = (CheckBox) findViewById(R.id.q4checkBox3);
-        answer4 = (CheckBox) findViewById(R.id.q4checkBox4);
-        answer5 = (CheckBox) findViewById(R.id.q4checkBox5);
-
         if (answer1.isChecked() && answer2.isChecked() && !answer3.isChecked() && answer4.isChecked() && !answer5.isChecked()) {
             quizScore++;
         }
     }
 
     public void q5CheckAnswer(View view) {
-        q5radioButton = (RadioButton) findViewById(R.id.q5radioButton1);
         q5radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
