@@ -6,22 +6,16 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     int quizScore = 0;
-
     CheckBox answer1;
     CheckBox answer2;
     CheckBox answer3;
     CheckBox answer4;
     CheckBox answer5;
-
-    RadioButton q1radioButton;
-    RadioButton q3radioButton;
-    RadioButton q5radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,65 +24,78 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void q1checkAnswer(View view) {
-        q1radioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.q1radioButton2:
-                        if (q1radioButton.isSelected())
-                            quizScore++;
-                        break;
-                }
-            }
-        });
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.q1radioButton1:
+                break;
+            case R.id.q1radioButton2:
+                if (checked)
+                    quizScore++;
+                break;
+            case R.id.q1radioButton3:
+                break;
+            case R.id.q1radioButton4:
+                break;
+        }
     }
 
     public void q2checkAnswer(View view) {
-        EditText text = (EditText) findViewById(R.id.q2_answer);
-        String answerValue = text.getText().toString();
-        if (answerValue.equalsIgnoreCase("The Mountain") || answerValue.equalsIgnoreCase("Mountain")) {
-            quizScore++;
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.q2radioButton1:
+                break;
+            case R.id.q2radioButton2:
+                if (checked)
+                    quizScore++;
+                break;
+            case R.id.q2radioButton3:
+                break;
+            case R.id.q2radioButton4:
+                break;
         }
     }
 
+    public void q3CheckAnswer(View view) {
+        answer1 = findViewById(R.id.q3checkBox1);
+        answer2 = findViewById(R.id.q3checkBox2);
+        answer3 = findViewById(R.id.q3checkBox3);
+        answer4 = findViewById(R.id.q3checkBox4);
+        answer5 = findViewById(R.id.q3checkBox5);
 
-    public void q3checkAnswer(View view) {
-        q3radioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.q3radioButton2:
-                        if (q3radioButton.isSelected())
-                            quizScore++;
-                        break;
-                }
-            }
-        });
+        if (answer1.isChecked() && answer2.isChecked() && answer4.isChecked()) {
+            quizScore++;
+        }
     }
 
     public void q4CheckAnswer(View view) {
-        if (answer1.isChecked() && answer2.isChecked() && !answer3.isChecked() && answer4.isChecked() && !answer5.isChecked()) {
-            quizScore++;
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.q4radioButton1:
+                if (checked)
+                    quizScore++;
+                break;
+            case R.id.q4radioButton2:
+                break;
+            case R.id.q4radioButton3:
+                break;
+            case R.id.q4radioButton4:
+                break;
         }
     }
 
-    public void q5CheckAnswer(View view) {
-        q5radioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.q5radioButton1:
-                        if (q5radioButton.isSelected())
-                            quizScore++;
-                        break;
-                }
-            }
-        });
-    }
-
     public void submitButton(View view) {
-        EditText text = (EditText) findViewById(R.id.name_field);
+        EditText text = findViewById(R.id.name_field);
         String name = text.getText().toString();
-        Toast.makeText(getBaseContext(), name + " your score is: " + quizScore, Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(),
+                name + " your score is: " + quizScore, Toast.LENGTH_LONG).show();
     }
 }
