@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     int quizScore = 0;
+
     CheckBox answer1;
     CheckBox answer2;
     CheckBox answer3;
@@ -23,45 +24,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void q1checkAnswer(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.q1radioButton1:
-                break;
-            case R.id.q1radioButton2:
-                if (checked)
-                    quizScore++;
-                break;
-            case R.id.q1radioButton3:
-                break;
-            case R.id.q1radioButton4:
-                break;
+    public void submitButton(View view) {
+        EditText text = findViewById(R.id.name_field);
+        String name = text.getText().toString();
+
+        RadioGroup rg1 = (RadioGroup) findViewById(R.id.q1radioGroup);
+        if (rg1.getCheckedRadioButtonId() == R.id.q1radioButton2) {
+            quizScore++;
         }
-    }
 
-    public void q2checkAnswer(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.q2radioButton1:
-                break;
-            case R.id.q2radioButton2:
-                if (checked)
-                    quizScore++;
-                break;
-            case R.id.q2radioButton3:
-                break;
-            case R.id.q2radioButton4:
-                break;
+        RadioGroup rg2 = (RadioGroup) findViewById(R.id.q2radioGroup);
+        if (rg2.getCheckedRadioButtonId() == R.id.q2radioButton2) {
+            quizScore++;
         }
-    }
 
-    public void q3CheckAnswer(View view) {
         answer1 = findViewById(R.id.q3checkBox1);
         answer2 = findViewById(R.id.q3checkBox2);
         answer3 = findViewById(R.id.q3checkBox3);
@@ -71,31 +48,15 @@ public class MainActivity extends AppCompatActivity {
         if (answer1.isChecked() && answer2.isChecked() && answer4.isChecked()) {
             quizScore++;
         }
-    }
 
-    public void q4CheckAnswer(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.q4radioButton1:
-                if (checked)
-                    quizScore++;
-                break;
-            case R.id.q4radioButton2:
-                break;
-            case R.id.q4radioButton3:
-                break;
-            case R.id.q4radioButton4:
-                break;
+        RadioGroup rg3 = (RadioGroup) findViewById(R.id.q4radioGroup);
+        if (rg3.getCheckedRadioButtonId() == R.id.q4radioButton1) {
+            quizScore++;
         }
-    }
 
-    public void submitButton(View view) {
-        EditText text = findViewById(R.id.name_field);
-        String name = text.getText().toString();
         Toast.makeText(getBaseContext(),
                 name + " your score is: " + quizScore, Toast.LENGTH_LONG).show();
+
+        quizScore = 0;
     }
 }

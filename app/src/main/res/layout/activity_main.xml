@@ -41,7 +41,6 @@
                 android:id="@+id/q1radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q1checkAnswer"
                 android:text="@string/q1_a"
                 android:textColor="#FF5722" />
 
@@ -49,7 +48,6 @@
                 android:id="@+id/q1radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q1checkAnswer"
                 android:text="@string/q1_b"
                 android:textColor="#651FFF" />
 
@@ -57,7 +55,6 @@
                 android:id="@+id/q1radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q1checkAnswer"
                 android:text="@string/q1_c"
                 android:textColor="#FF1744" />
 
@@ -65,7 +62,6 @@
                 android:id="@+id/q1radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q1checkAnswer"
                 android:text="@string/q1_d"
                 android:textColor="#00695C" />
         </RadioGroup>
@@ -94,7 +90,6 @@
                 android:id="@+id/q2radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q2checkAnswer"
                 android:text="@string/q2_a"
                 android:textColor="#4CAF50" />
 
@@ -102,7 +97,6 @@
                 android:id="@+id/q2radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q2checkAnswer"
                 android:text="@string/q2_b"
                 android:textColor="#FFC107" />
 
@@ -110,7 +104,6 @@
                 android:id="@+id/q2radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q2checkAnswer"
                 android:text="@string/q2_c"
                 android:textColor="#795548" />
 
@@ -118,7 +111,6 @@
                 android:id="@+id/q2radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q2checkAnswer"
                 android:text="@string/q2_d"
                 android:textColor="#607D8B" />
         </RadioGroup>
@@ -136,35 +128,30 @@
             android:id="@+id/q3checkBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="q3CheckAnswer"
             android:text="@string/q3_a" />
 
         <CheckBox
             android:id="@+id/q3checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="q3CheckAnswer"
             android:text="@string/q3_b" />
 
         <CheckBox
             android:id="@+id/q3checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="q3CheckAnswer"
             android:text="@string/q3_c" />
 
         <CheckBox
             android:id="@+id/q3checkBox4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="q3CheckAnswer"
             android:text="@string/q3_d" />
 
         <CheckBox
             android:id="@+id/q3checkBox5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="q3CheckAnswer"
             android:text="@string/q3_e" />
 
         <TextView
@@ -177,7 +164,7 @@
             android:textStyle="bold" />
 
         <RadioGroup
-            android:id="@+id/q4RadioGroup"
+            android:id="@+id/q4radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -185,7 +172,6 @@
                 android:id="@+id/q4radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q4CheckAnswer"
                 android:text="@string/q4_a"
                 android:textColor="#F44336" />
 
@@ -193,7 +179,6 @@
                 android:id="@+id/q4radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q4CheckAnswer"
                 android:text="@string/q4_b"
                 android:textColor="#E91E63" />
 
@@ -201,7 +186,6 @@
                 android:id="@+id/q4radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q4CheckAnswer"
                 android:text="@string/q4_c"
                 android:textColor="#9C27B0" />
 
@@ -209,7 +193,6 @@
                 android:id="@+id/q4radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="q4CheckAnswer"
                 android:text="@string/q4_d"
                 android:textColor="#3F51B5" />
         </RadioGroup>
