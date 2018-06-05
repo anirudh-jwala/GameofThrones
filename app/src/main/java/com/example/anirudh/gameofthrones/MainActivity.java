@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitButton(View view) {
         EditText text = findViewById(R.id.name_field);
-        String name = text.getText().toString();
+        String name = text.getText().toString().trim();
 
         RadioGroup rg1 = (RadioGroup) findViewById(R.id.q1radioGroup);
         if (rg1.getCheckedRadioButtonId() == R.id.q1radioButton2) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         answer4 = findViewById(R.id.q3checkBox4);
         answer5 = findViewById(R.id.q3checkBox5);
 
-        if (answer1.isChecked() && answer2.isChecked() && answer4.isChecked()) {
+        if (answer1.isChecked() && answer2.isChecked() && !answer3.isChecked() && answer4.isChecked() && !answer5.isChecked()) {
             quizScore++;
         }
 
